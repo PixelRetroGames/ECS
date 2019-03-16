@@ -1,5 +1,5 @@
-#ifndef ENTITY_MANAGER_H
-#define ENTITY_MANAGER_H
+#ifndef ECS_ENTITY_MANAGER_H
+#define ECS_ENTITY_MANAGER_H
 
 #include "Entity.h"
 
@@ -16,4 +16,4 @@ namespace ECS
     };
 }
 
-#endif // ENTITY_MANAGER_H
+#endif // ECS_ENTITY_MANAGER_H

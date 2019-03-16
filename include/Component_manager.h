@@ -1,13 +1,17 @@
-#ifndef COMPONENT_MANAGER_H
-#define COMPONENT_MANAGER_H
+#ifndef ECS_COMPONENT_MANAGER_H
+#define ECS_COMPONENT_MANAGER_H
 
 #include "Component.h"
 #include "Entity_map.h"
 
 namespace ECS
 {
+    class Base_component_manager
+    {
+    };
+
     template <typename Component_type>
-    class Component_manager
+    class Component_manager : public Base_component_manager
     {
      private:
      int number_of_chunks;
@@ -51,9 +55,9 @@ namespace ECS
      Component_type *Find(Entity entity)
      {
       Component_id id=entity_map.Get_component(entity);
-      return components[id];
+      return &components[id];
      }
     };
 }
 
-#endif // COMPONENT_MANAGER_H
+#endif // ECSCOMPONENT_MANAGER_H

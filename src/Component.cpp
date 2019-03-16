@@ -2,8 +2,5 @@
 
 namespace ECS
 {
-    Component_manager::Component_manager()
-    {
-
-    }
+    int Component_type_counter::type_counter=0;
 }

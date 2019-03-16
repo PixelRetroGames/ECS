@@ -1,5 +1,5 @@
-#ifndef ENTITY_MAP_H
-#define ENTITY_MAP_H
+#ifndef ECS_ENTITY_MAP_H
+#define ECS_ENTITY_MAP_H
 
 #include "Entity.h"
 #include <map>
@@ -24,4 +24,4 @@ namespace ECS
 }
 
 
-#endif // ENTITY_MAP_H
+#endif // ECS_ENTITY_MAP_H

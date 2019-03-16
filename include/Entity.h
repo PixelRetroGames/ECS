@@ -1,5 +1,5 @@
-#ifndef ENTITY_H
-#define ENTITY_H
+#ifndef ECS_ENTITY_H
+#define ECS_ENTITY_H
 
 namespace ECS
 {
@@ -10,11 +10,15 @@ namespace ECS
 
      Entity(int _id=0): id(_id) {};
 
-     friend bool operator < (const Entity &a, const Entity &b)
+     bool operator < (const Entity &other) const
      {
-      return a.id<b.id;
+      return id<other.id;
+     }
+     bool operator == (const Entity &other) const
+     {
+      return id==other.id;
      }
     };
 }
 
-#endif // ENTITY_H
+#endif // ECS_ENTITY_H
