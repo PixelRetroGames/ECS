@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1552574271 source:e:\programming\ecs\main.cpp
+	"include/Component.h"
+	<cstdio>
+
+1552574260 e:\programming\ecs\include\component.h
+	<vector>
+
+1552577818 source:e:\programming\ecs\src\entity_map.cpp
+	"../include/Entity_map.h"
+
+1552576606 e:\programming\ecs\include\entity_map.h
+	"Entity.h"
+	<map>
+
+1552750328 e:\programming\ecs\include\entity.h
+
+1552750282 source:e:\programming\ecs\src\entity_manager.cpp
+	"../include/Entity_manager.h"
+
+1552750141 e:\programming\ecs\include\entity_manager.h
+	"Entity.h"
+
