@@ -7,12 +7,12 @@ namespace ECS
 {
     class Entity_manager
     {
-     public:
-     int last_entity_id;
+     private:
+     int last_entity_id=0;
 
      public:
      Entity Add_entity();
-     void Remove_entity();
+     void Remove_entity(Entity entity);
     };
 }
 

@@ -8,8 +8,8 @@ namespace ECS
      return Entity(last_entity_id);
     }
 
-    void Entity_manager::Remove_entity()
+    void Entity_manager::Remove_entity(Entity entity)
     {
-     //sq
+     entity.id=0;
     }
 }

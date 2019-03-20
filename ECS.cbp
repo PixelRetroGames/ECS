@@ -33,11 +33,19 @@
 		</Compiler>
 		<Unit filename="include/Component.h" />
 		<Unit filename="include/Component_manager.h" />
+		<Unit filename="include/Component_mask.h" />
+		<Unit filename="include/Engine.h" />
 		<Unit filename="include/Entity.h" />
+		<Unit filename="include/Entity_manager.h" />
 		<Unit filename="include/Entity_map.h" />
 		<Unit filename="include/Includes.h" />
+		<Unit filename="include/System.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Component.cpp" />
+		<Unit filename="src/Component_mask.cpp" />
+		<Unit filename="src/Entity_manager.cpp" />
 		<Unit filename="src/Entity_map.cpp" />
+		<Unit filename="src/System.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

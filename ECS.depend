@@ -3,8 +3,10 @@
 	"include/Component.h"
 	<cstdio>
 
-1552760860 e:\programming\ecs\include\component.h
+1553098262 e:\programming\ecs\include\component.h
 	<vector>
+	"Component_manager.h"
+	"Entity.h"
 
 1552577818 source:e:\programming\ecs\src\entity_map.cpp
 	"../include/Entity_map.h"
@@ -13,12 +15,12 @@
 	"Entity.h"
 	<map>
 
-1552761172 e:\programming\ecs\include\entity.h
+1553097786 e:\programming\ecs\include\entity.h
 
-1552750282 source:e:\programming\ecs\src\entity_manager.cpp
+1553102332 source:e:\programming\ecs\src\entity_manager.cpp
 	"../include/Entity_manager.h"
 
-1552756671 e:\programming\ecs\include\entity_manager.h
+1553102342 e:\programming\ecs\include\entity_manager.h
 	"Entity.h"
 
 1552751769 source:e:\programming\ecs\src\component.cpp
@@ -34,7 +36,35 @@
 	"../include/System.h"
 	<algorithm>
 
-1552756602 e:\programming\ecs\include\system.h
+1553097815 e:\programming\ecs\include\system.h
 	"Component_mask.h"
 	"Entity.h"
+
+1553098602 e:\programming\ecs\include\engine.h
+	"Component.h"
+	"Component_handle.h"
+	"Component_manager.h"
+	"Component_mask.h"
+	"Entity.h"
+	"Entity_manager.h"
+	"System.h"
+	<memory>
+
+1553101350 e:\programming\ecs\include\component_manager.h
+	"Entity.h"
+	"Entity_map.h"
+	<vector>
+
+1553098766 e:\programming\ecs\include\entity_handle.h
+	"Component_handle.h"
+	"Entity.h"
+	"Engine.h"
+
+1553090265 e:\programming\ecs\include\component_handle.h
+	"Component_manager.h"
+	"Entity.h"
+
+1553098653 source:e:\programming\ecs\src\engine.cpp
+	"../include/Engine.h"
+	"../include/Entity_handle.h"
 

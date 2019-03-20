@@ -3,6 +3,8 @@
 
 namespace ECS
 {
+    class Engine;
+
     struct Entity
     {
      public:
@@ -14,6 +16,7 @@ namespace ECS
      {
       return id<other.id;
      }
+
      bool operator == (const Entity &other) const
      {
       return id==other.id;

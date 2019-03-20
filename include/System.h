@@ -6,6 +6,8 @@
 
 namespace ECS
 {
+    class Engine;
+
     class System
     {
      private:
@@ -23,7 +25,7 @@ namespace ECS
      virtual void Update(int dt)=0;
 
      ///Called every frame
-     virtual void Render();
+     virtual void Render()=0;
 
      ///Non-overloadable
      void Register_entity(Entity entity);

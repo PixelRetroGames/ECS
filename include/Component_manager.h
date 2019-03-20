@@ -1,8 +1,9 @@
 #ifndef ECS_COMPONENT_MANAGER_H
 #define ECS_COMPONENT_MANAGER_H
 
-#include "Component.h"
+#include "Entity.h"
 #include "Entity_map.h"
+#include <vector>
 
 namespace ECS
 {
@@ -47,6 +48,9 @@ namespace ECS
 
       std::swap(components[id],components.back());
       components.pop_back();
+
+      if(components.size()<number_of_chunks*CHUNK_SIZE)
+         components.resize((--number_of_chunks)*CHUNK_SIZE);
 
       entity_map.Remove(entity);
       entity_map.Add(last_entity,id);

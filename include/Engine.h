@@ -1,12 +1,25 @@
 #ifndef ECS_ENGINE_H
 #define ECS_ENGINE_H
 
+#include "Component.h"
+#include "Component_handle.h"
+#include "Component_manager.h"
+#include "Component_mask.h"
 #include "Entity.h"
-#include "Entity_map.h"
+#include "Entity_manager.h"
+#include "System.h"
+
 #include <memory>
+
+template<typename T, typename... Args>
+std::unique_ptr<T> make_unique(Args&&... args) {
+    return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
+}
 
 namespace ECS
 {
+    class Entity_handle;
+
     class Engine
     {
      private:
@@ -16,11 +29,21 @@ namespace ECS
      std::map<Entity,Component_mask> entity_masks;
 
      public:
+     void Init();
+     void Update(int dt);
+     void Render();
+
+     Entity_handle Add_entity();
+     void Remove_entity(Entity entity);
+
+     void Update_entity_mask(Entity const &entity,Component_mask old_mask);
+
+
      template <typename Component_type>
      Component_manager<Component_type> *Get_component_manager()
      {
       int type_id=Get_component_type_id<Component_type>();
-      component_managers.push_back(std::make_unique<Component_manager<Component_type>>());
+      component_managers.push_back(make_unique<Component_manager<Component_type>>());
       return static_cast<Component_manager<Component_type>*>(component_managers.back().get());
      }
 
@@ -47,8 +70,23 @@ namespace ECS
      template <typename Component_type>
      void Remove_component(Entity const &entity)
      {
+      Component_manager<Component_type> *manager=Get_component_manager<Component_type>();
+      Component_type component=manager->Find(entity);
+      component.Clear();
 
+      Component_mask old_mask=entity_masks[entity];
+      entity_masks[entity].Remove_component<Component_type>();
+
+      Update_entity_mask(entity,old_mask);
      }
+
+     template <typename Component_type>
+     void Translate(Entity entity,Component_handle<Component_type> &handle)
+     {
+      Component_manager<Component_type> *manager=Get_component_manager<Component_type>();
+      handle=Component_handle<Component_type>(entity,manager->Find(entity),manager);
+     }
+
     };
 }
 

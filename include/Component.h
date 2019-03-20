@@ -2,6 +2,8 @@
 #define ECS_COMPONENT_H
 
 #include <vector>
+#include "Component_manager.h"
+#include "Entity.h"
 
 namespace ECS
 {
