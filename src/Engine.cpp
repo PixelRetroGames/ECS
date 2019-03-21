@@ -3,6 +3,8 @@
 
 namespace ECS
 {
+    Engine::Engine(std::unique_ptr<Entity_manager> _entity_manager): entity_manager(std::move(_entity_manager)) {}
+
     void Engine::Init()
     {
      for(int i=0;i<systems.size();i++)
@@ -21,9 +23,16 @@ namespace ECS
          systems[i]->Render();
     }
 
+    void Engine::Add_system(std::unique_ptr<System> system)
+    {
+     system->Register_engine(this);
+     systems.push_back(std::move(system));
+    }
+
     Entity_handle Engine::Add_entity()
     {
      Entity_handle handle(entity_manager->Add_entity(),this);
+     return handle;
     }
 
     void Engine::Remove_entity(Entity entity)

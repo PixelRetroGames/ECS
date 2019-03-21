@@ -1,6 +1,6 @@
 # depslib dependency file v1.0
-1552754157 source:e:\programming\ecs\main.cpp
-	"include/Component.h"
+1553184425 source:e:\programming\ecs\main.cpp
+	"include/ECS.h"
 	<cstdio>
 
 1553098262 e:\programming\ecs\include\component.h
@@ -15,13 +15,14 @@
 	"Entity.h"
 	<map>
 
-1553097786 e:\programming\ecs\include\entity.h
+1553180274 e:\programming\ecs\include\entity.h
 
-1553102332 source:e:\programming\ecs\src\entity_manager.cpp
+1553183029 source:e:\programming\ecs\src\entity_manager.cpp
 	"../include/Entity_manager.h"
 
-1553102342 e:\programming\ecs\include\entity_manager.h
+1553180662 e:\programming\ecs\include\entity_manager.h
 	"Entity.h"
+	<set>
 
 1552751769 source:e:\programming\ecs\src\component.cpp
 	"../include/Component.h"
@@ -32,15 +33,15 @@
 1552756562 e:\programming\ecs\include\component_mask.h
 	"Component.h"
 
-1552760952 source:e:\programming\ecs\src\system.cpp
+1553183362 source:e:\programming\ecs\src\system.cpp
 	"../include/System.h"
 	<algorithm>
 
-1553097815 e:\programming\ecs\include\system.h
+1553183341 e:\programming\ecs\include\system.h
 	"Component_mask.h"
 	"Entity.h"
 
-1553098602 e:\programming\ecs\include\engine.h
+1553184864 e:\programming\ecs\include\engine.h
 	"Component.h"
 	"Component_handle.h"
 	"Component_manager.h"
@@ -60,11 +61,20 @@
 	"Entity.h"
 	"Engine.h"
 
-1553090265 e:\programming\ecs\include\component_handle.h
+1553184015 e:\programming\ecs\include\component_handle.h
 	"Component_manager.h"
 	"Entity.h"
 
-1553098653 source:e:\programming\ecs\src\engine.cpp
+1553183411 source:e:\programming\ecs\src\engine.cpp
 	"../include/Engine.h"
 	"../include/Entity_handle.h"
+
+1553182943 e:\programming\ecs\include\ecs.h
+	"Component.h"
+	"Component_handle.h"
+	"Component_manager.h"
+	"Entity.h"
+	"Entity_handle.h"
+	"System.h"
+	"Engine.h"
 

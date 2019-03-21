@@ -29,9 +29,13 @@ namespace ECS
      std::map<Entity,Component_mask> entity_masks;
 
      public:
+     explicit Engine(std::unique_ptr<Entity_manager> _entity_manager);
+
      void Init();
      void Update(int dt);
      void Render();
+
+     void Add_system(std::unique_ptr<System> system);
 
      Entity_handle Add_entity();
      void Remove_entity(Entity entity);
@@ -43,8 +47,11 @@ namespace ECS
      Component_manager<Component_type> *Get_component_manager()
      {
       int type_id=Get_component_type_id<Component_type>();
-      component_managers.push_back(make_unique<Component_manager<Component_type>>());
-      return static_cast<Component_manager<Component_type>*>(component_managers.back().get());
+      if(type_id>=component_managers.size())
+         component_managers.resize(type_id+1);
+      if(component_managers[type_id]==0)
+         component_managers[type_id]=make_unique<Component_manager<Component_type>>();
+      return static_cast<Component_manager<Component_type>*>(component_managers[type_id].get());
      }
 
 
@@ -52,7 +59,10 @@ namespace ECS
      void Add_component_manager(std::unique_ptr<Component_manager<Component_type>> manager)
      {
       int type_id=Get_component_type_id<Component_type>();
-      component_managers.push_back(manager);
+      if(type_id>=component_managers.size())
+         component_managers.resize(type_id+1);
+      if(component_managers[type_id]==0)
+         component_managers[type_id]=manager;
      }
 
      template <typename Component_type>

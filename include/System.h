@@ -10,26 +10,28 @@ namespace ECS
 
     class System
     {
-     private:
+     protected:
      std::vector<Entity> entities;
      Component_mask mask;
+     Engine *engine;
 
      public:
      System()=default;
      virtual ~System()=default;
 
      ///Called before starting the app, but after the engine initialized
-     virtual void Init()=0;
+     virtual void Init(){}
 
      ///Called every update
-     virtual void Update(int dt)=0;
+     virtual void Update(int dt){}
 
      ///Called every frame
-     virtual void Render()=0;
+     virtual void Render(){}
 
      ///Non-overloadable
      void Register_entity(Entity entity);
      void Unregister_entity(Entity entity);
+     void Register_engine(Engine *_engine);
      Component_mask Get_mask();
     };
 }

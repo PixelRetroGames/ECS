@@ -14,6 +14,11 @@ namespace ECS
      entities.erase(it);
     }
 
+    void System::Register_engine(Engine *_engine)
+    {
+     engine=_engine;
+    }
+
     Component_mask System::Get_mask()
     {
      return mask;

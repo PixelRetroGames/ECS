@@ -10,7 +10,7 @@ namespace ECS
      public:
      int id;
 
-     Entity(int _id=0): id(_id) {};
+     Entity(int _id=-1): id(_id) {};
 
      bool operator < (const Entity &other) const
      {
