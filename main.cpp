@@ -11,12 +11,22 @@ class Testable : public ECS::Component<Testable>
  Testable(int _sq) : sq(_sq) {};
 };
 
+class Testttt : public ECS::Component<Testttt>
+{
+ public:
+ int x,y;
+
+ public:
+ Testttt(int _x,int _y) : x(_x),y(_y) {};
+};
+
 class Test : public ECS::System
 {
  public:
  Test()
  {
   mask.Add_component<Testable>();
+  mask.Add_component<Testttt>();
  }
 
  void Update(int dt)
@@ -43,6 +53,7 @@ int main()
 
  ECS::Entity_handle sqq=engine->Add_entity(),skr=engine->Add_entity();
  sqq.Add_component(Testable(45));
+ sqq.Add_component(Testttt(4,5));
  skr.Add_component(Testable(69));
 
  for(int i=0;i<7;i++)

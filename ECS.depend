@@ -1,6 +1,6 @@
 # depslib dependency file v1.0
-1553530046 source:e:\programming\ecs\main.cpp
-	"ECS/include/ECS.h"
+1553534581 source:e:\programming\ecs\main.cpp
+	"ECS/ECS.h"
 	<cstdio>
 
 1553098262 e:\programming\ecs\include\component.h
@@ -152,4 +152,13 @@
 	"Entity_handle.h"
 	"System.h"
 	"Engine.h"
+
+1553530141 e:\programming\ecs\ecs\ecs.h
+	"include/Component.h"
+	"include/Component_handle.h"
+	"include/Component_manager.h"
+	"include/Entity.h"
+	"include/Entity_handle.h"
+	"include/System.h"
+	"include/Engine.h"
 

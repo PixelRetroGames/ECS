@@ -31,11 +31,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="ECS/ECS.h" />
 		<Unit filename="ECS/include/Component.h" />
 		<Unit filename="ECS/include/Component_handle.h" />
 		<Unit filename="ECS/include/Component_manager.h" />
 		<Unit filename="ECS/include/Component_mask.h" />
-		<Unit filename="ECS/include/ECS.h" />
 		<Unit filename="ECS/include/Engine.h" />
 		<Unit filename="ECS/include/Entity.h" />
 		<Unit filename="ECS/include/Entity_handle.h" />

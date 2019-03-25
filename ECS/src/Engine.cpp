@@ -55,9 +55,10 @@ namespace ECS
               systems[i]->Register_entity(entity);
              }
           else
-             {
-              systems[i]->Unregister_entity(entity);
-             }
+             if(new_mask.Is_no_longer_matching(old_mask,system_mask))
+                {
+                 systems[i]->Unregister_entity(entity);
+                }
          }
     }
 }
