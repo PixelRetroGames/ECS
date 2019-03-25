@@ -11,6 +11,15 @@ class Testable : public ECS::Component<Testable>
  Testable(int _sq) : sq(_sq) {};
 };
 
+class Imagine : public ECS::Component<Testable>
+{
+ public:
+ int id;
+
+ public:
+ Imagine(int _id) : id(_id) {};
+};
+
 class Testttt : public ECS::Component<Testttt>
 {
  public:
@@ -55,6 +64,8 @@ int main()
  sqq.Add_component(Testable(45));
  sqq.Add_component(Testttt(4,5));
  skr.Add_component(Testable(69));
+ skr.Add_component(Testttt(4,8));
+ skr.Add_component(Imagine(69));
 
  for(int i=0;i<7;i++)
      engine->Update(i);

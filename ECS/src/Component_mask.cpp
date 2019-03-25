@@ -4,7 +4,8 @@ namespace ECS
 {
     bool Component_mask::Is_matching(Component_mask system_mask)
     {
-     return mask==system_mask.mask;
+     return (system_mask.mask-(system_mask.mask&mask))==0;
+     //return mask==system_mask.mask;
     }
 
     bool Component_mask::Is_new_match(Component_mask old_mask,Component_mask system_mask)
