@@ -18,7 +18,7 @@ namespace ECS
 
      void Clear()
      {
-      //engine->Remove_entity(entity);
+      engine->Remove_entity(entity);
      }
 
      template <typename Component_type>

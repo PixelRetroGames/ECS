@@ -19,7 +19,7 @@ namespace ECS
      System()=default;
      virtual ~System()=default;
 
-     ///Called before starting the app, but after the engine initialized
+     ///Called before calling update and render, but after the engine initialized
      virtual void Init(){}
 
      ///Called every update

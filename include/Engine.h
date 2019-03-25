@@ -42,7 +42,6 @@ namespace ECS
 
      void Update_entity_mask(Entity const &entity,Component_mask old_mask);
 
-
      template <typename Component_type>
      Component_manager<Component_type> *Get_component_manager()
      {
