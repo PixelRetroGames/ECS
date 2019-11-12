@@ -16,13 +16,35 @@ namespace ECS
     template <typename Component_type>
     class Component
     {
+     private:
+     static int type_id;
+
      public:
+     Component()
+     {
+      if(type_id==-1)
+         Create_type_id();
+     }
+
+     static void Create_type_id()
+     {
+      static int _type_id=Component_type_counter::type_counter++;
+      if(type_id==-1)
+         {
+          type_id=_type_id;
+         }
+     }
+
      static inline int Get_type_id()
      {
-      static int type_id=Component_type_counter::type_counter++;
+      if(type_id==-1)
+         Create_type_id();
       return type_id;
      }
     };
+
+    template<typename Component_type>
+    int Component<Component_type>::type_id=-1;
 
     template <typename Component_type>
     static int Get_component_type_id()

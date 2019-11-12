@@ -46,10 +46,8 @@ namespace ECS
      Component_manager<Component_type> *Get_component_manager()
      {
       int type_id=Get_component_type_id<Component_type>();
-      if(type_id>=component_managers.size())
-         component_managers.resize(type_id+1);
-      if(component_managers[type_id]==0)
-         component_managers[type_id]=make_unique<Component_manager<Component_type>>();
+      if(type_id>=component_managers.size() || component_managers[type_id]==0)
+         Add_component_manager(make_unique<Component_manager<Component_type>>());
       return static_cast<Component_manager<Component_type>*>(component_managers[type_id].get());
      }
 
@@ -61,7 +59,7 @@ namespace ECS
       if(type_id>=component_managers.size())
          component_managers.resize(type_id+1);
       if(component_managers[type_id]==0)
-         component_managers[type_id]=manager;
+         component_managers[type_id]=std::move(manager);
      }
 
      template <typename Component_type>
